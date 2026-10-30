@@ -1,0 +1,208 @@
+:root {
+  --brand-primary: #FF4757;
+  --brand-primary-hover: #EE3747;
+  --brand-gradient: linear-gradient(135deg, #FF4757 0%, #FF6B81 100%);
+  --brand-dark-gradient: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  --accent-amber: #FFA502;
+  --accent-green: #2ED573;
+  --dark-900: #0F172A;
+  --dark-800: #1E293B;
+  --dark-700: #334155;
+  --muted-gray: #64748B;
+  --light-bg: #F8FAFC;
+  --card-border: #E2E8F0;
+  --card-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
+  --card-shadow-hover: 0 20px 30px -10px rgba(255, 71, 87, 0.15), 0 10px 15px -5px rgba(0, 0, 0, 0.04);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-900);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: -0.01em;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism Navbar */
+.glass-navbar {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.55rem;
+  color: var(--dark-900) !important;
+  letter-spacing: -0.5px;
+}
+
+.brand-gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Modern Buttons */
+.btn {
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  padding: 0.6rem 1.35rem;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+}
+
+.btn-primary {
+  background: var(--brand-gradient);
+  border: none;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 71, 87, 0.3);
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(135deg, #EE3747 0%, #FF4757 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 71, 87, 0.4);
+  color: #ffffff;
+}
+
+.btn-outline-primary {
+  color: var(--brand-primary);
+  border: 1.5px solid var(--brand-primary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 71, 87, 0.25);
+}
+
+/* Modern Card System */
+.card {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  box-shadow: var(--card-shadow);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.card-interactive:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: #CBD5E1;
+}
+
+/* Image Containers */
+.card-img-top-wrap {
+  height: 190px;
+  position: relative;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+.card-img-top-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card-interactive:hover .card-img-top-wrap img {
+  transform: scale(1.06);
+}
+
+.floating-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(15, 23, 42, 0.75);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.7rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.floating-rating {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--dark-900);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.65rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Category Filter Pills */
+.category-pill {
+  padding: 0.5rem 1.25rem;
+  border-radius: 30px;
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  color: var(--dark-700);
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.2s ease;
+}
+
+.category-pill:hover, .category-pill.active {
+  background: var(--dark-900);
+  color: #ffffff;
+  border-color: var(--dark-900);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+/* Order Status Badges */
+.badge-status {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 30px;
+  letter-spacing: 0.4px;
+}
+
+.badge-PLACED { background: #FEF3C7; color: #D97706; }
+.badge-CONFIRMED { background: #E0E7FF; color: #4F46E5; }
+.badge-PREPARING { background: #FCE7F3; color: #DB2777; }
+.badge-OUT_FOR_DELIVERY { background: #CCFBF1; color: #0D9488; }
+.badge-DELIVERED { background: #DCFCE7; color: #16A34A; }
+.badge-CANCELLED { background: #FEE2E2; color: #DC2626; }

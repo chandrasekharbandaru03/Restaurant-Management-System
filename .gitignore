@@ -1,0 +1,21 @@
+ # Java / Maven
+**/target/
+*.class
+*.log
+
+# React / Node.js
+**/node_modules/
+**/dist/
+**/build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# IDE files
+.metadata/
+.DS_Store
+Thumbs.db
+                         
+**/application-local.properties
